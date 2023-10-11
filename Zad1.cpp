@@ -12,7 +12,7 @@ private:
     Node* tail;
 public:
     DoublyLinkedList() : head(nullptr), tail(nullptr) {}
-    // Dodaj element na pocz¹tek listy.
+    // Dodaje element na pocz¹tek listy.
     void addToFront(int value) {
         Node* newNode = new Node(value);
         if (isEmpty()) {
@@ -24,7 +24,7 @@ public:
             head = newNode;
         }
     }
-    // Dodaj element na koniec listy.
+    // Dodaje element na koniec listy.
     void addToEnd(int value) {
         Node* newNode = new Node(value);
         if (isEmpty()) {
@@ -36,10 +36,10 @@ public:
             tail = newNode;
         }
     }
-    // Dodaj element pod wskazany indeks.
+    // Dodaje element pod wskazany indeks.
     void insertAt(int index, int value) {
         if (index < 0) {
-            std::cout << "Invalid index." << std::endl;
+            std::cout << "Nieprawidlowy index" << std::endl;
             return;
         }
         if (index == 0) {
@@ -62,10 +62,10 @@ public:
             }
         }
     }
-    // Usuñ element z pocz¹tku listy.
+    // Usuwa element z pocz¹tku listy.
     void removeFromFront() {
         if (isEmpty()) {
-            std::cout << "List is empty." << std::endl;
+            std::cout << "Lista jest pusta" << std::endl;
             return;
         }
         Node* temp = head;
