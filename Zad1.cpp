@@ -12,7 +12,7 @@ private:
     Node* tail;
 public:
     DoublyLinkedList() : head(nullptr), tail(nullptr) {}
-    // Dodaj element na pocz¹tek listy.
+    // Dodaj element na poczÂ¹tek listy.
     void addToFront(int value) {
         Node* newNode = new Node(value);
         if (isEmpty()) {
@@ -62,7 +62,7 @@ public:
             }
         }
     }
-    // Usuñ element z pocz¹tku listy.
+    // UsuÃ± element z poczÂ¹tku listy.
     void removeFromFront() {
         if (isEmpty()) {
             std::cout << "List is empty." << std::endl;
@@ -78,7 +78,7 @@ public:
         }
         delete temp;
     }
-    // Zwraca iloœæ elementów w liœcie.
+    // Zwraca iloÅ“Ã¦ elementÃ³w w liÅ“cie.
     int size() const {
         int count = 0;
         Node* current = head;
@@ -92,7 +92,7 @@ public:
     bool isEmpty() const {
         return head == nullptr;
     }
-    // Wyœwietla zawartoœæ listy.
+    // WyÅ“wietla zawartoÅ“Ã¦ listy.
     void display() {
         Node* current = head;
         while (current != nullptr) {
@@ -105,7 +105,7 @@ public:
 int main() {
     DoublyLinkedList myList;
 
-    std::cout << "pusta lista : ";
+    std::cout << "Pusta lista : ";
     myList.display();
     myList.addToFront(1);
     myList.addToFront(2);
