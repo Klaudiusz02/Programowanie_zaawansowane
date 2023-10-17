@@ -223,6 +223,10 @@ int main() {
     myList.displayPrevious(1);
     
     myList.clear();
+
+    std::cout << "Lista po wyczyszczeniu: ";
+    myList.display();
     
     return 0;
 }
+//commit do cofnięcia 1
