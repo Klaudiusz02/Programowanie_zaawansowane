@@ -147,6 +147,45 @@ public:
         current->next->prev = current->prev;
         delete current;
     }
+     //wyswietlenie nastepnego elementu
+    void displayNext(int value) {
+    Node* current = head;
+    while (current != nullptr) {
+        if (current->data == value) {
+            if (current->next != nullptr) {
+                std::cout << "Następny element: " << current->next->data << std::endl;
+            } else {
+                std::cout << "Brak następnego elementu" << std::endl;
+            }
+            return;
+        }
+        current = current->next;
+    }
+    std::cout << "Element o podanej wartości nie istnieje w liście" << std::endl;
+    }
+    //wyswietlenie poprzedniego elementu
+    void displayPrevious(int value) {
+    Node* current = head;
+    while (current != nullptr) {
+        if (current->data == value) {
+            if (current->prev != nullptr) {
+                std::cout << "Poprzedni element: " << current->prev->data << std::endl;
+            } else {
+                std::cout << "Brak poprzedniego elementu" << std::endl;
+            }
+            return;
+        }
+        current = current->next;
+    }
+    std::cout << "Element o podanej wartości nie istnieje w liście" << std::endl;
+    }
+    //wyczyszczenie listy
+    void clear() {
+    while (!isEmpty()) {
+        removeFromFront();
+    }
+    std::cout << "Lista została wyczyszczona." << std::endl;
+    }
 }
 };
 int main() {
@@ -179,6 +218,11 @@ int main() {
     myList.removeAt(1);
     std::cout << "Lista po usunięciu na index 1: ";
     myList.display();
+
+    myList.displayNext(1);
+    myList.displayPrevious(1);
+    
+    myList.clear();
     
     return 0;
 }
