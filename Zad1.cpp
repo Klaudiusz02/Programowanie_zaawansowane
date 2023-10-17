@@ -147,21 +147,22 @@ public:
         current->next->prev = current->prev;
         delete current;
     }
+    }
      //wyswietlenie nastepnego elementu
     void displayNext(int value) {
     Node* current = head;
     while (current != nullptr) {
         if (current->data == value) {
             if (current->next != nullptr) {
-                std::cout << "Następny element: " << current->next->data << std::endl;
+                std::cout << "Nastepny element: " << current->next->data << std::endl;
             } else {
-                std::cout << "Brak następnego elementu" << std::endl;
+                std::cout << "Brak nastepnego elementu" << std::endl;
             }
             return;
         }
         current = current->next;
     }
-    std::cout << "Element o podanej wartości nie istnieje w liście" << std::endl;
+    std::cout << "Element o podanej wartosci nie istnieje w liscie" << std::endl;
     }
     //wyswietlenie poprzedniego elementu
     void displayPrevious(int value) {
@@ -177,16 +178,15 @@ public:
         }
         current = current->next;
     }
-    std::cout << "Element o podanej wartości nie istnieje w liście" << std::endl;
+    std::cout << "Element o podanej wartosci nie istnieje w liscie" << std::endl;
     }
     //wyczyszczenie listy
     void clear() {
     while (!isEmpty()) {
         removeFromFront();
     }
-    std::cout << "Lista została wyczyszczona." << std::endl;
+    std::cout << "Lista zostala wyczyszczona." << std::endl;
     }
-}
 };
 int main() {
     DoublyLinkedList myList;
@@ -196,6 +196,9 @@ int main() {
     
     myList.addToFront(1);
     myList.addToFront(2);
+    myList.addToFront(5);
+    myList.addToFront(6);
+    myList.addToFront(7);
     myList.addToEnd(3);
     std::cout << "Lista po dodaniu elementow : ";
     myList.display();
@@ -204,7 +207,7 @@ int main() {
     std::cout << "Lista po dodaniu na index 1: ";
     myList.display();
 
-    std::cout << "Lista w odwrotnej kolejności: ";
+    std::cout << "Lista w odwrotnej kolejnosci: ";
     myList.displayReverse();
     
     myList.removeFromFront();
@@ -216,11 +219,11 @@ int main() {
     myList.display();
     
     myList.removeAt(1);
-    std::cout << "Lista po usunięciu na index 1: ";
+    std::cout << "Lista po usunieciu na index 1: ";
     myList.display();
 
-    myList.displayNext(1);
-    myList.displayPrevious(1);
+    myList.displayNext(5);
+    myList.displayPrevious(5);
     
     myList.clear();
 
@@ -229,6 +232,3 @@ int main() {
     
     return 0;
 }
-//commit do cofnięcia 1
-//commit do cofnięcia 2
-//commit do usunięcia
