@@ -230,3 +230,4 @@ int main() {
     return 0;
 }
 //commit do cofnięcia 1
+//commit do cofnięcia 2
