@@ -231,3 +231,4 @@ int main() {
 }
 //commit do cofnięcia 1
 //commit do cofnięcia 2
+//commit do usunięcia
