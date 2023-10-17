@@ -92,6 +92,15 @@ public:
     bool isEmpty() const {
         return head == nullptr;
     }
+    //Wyświetla listę odwrotnie
+    void displayReverse() {
+        Node* current = tail;
+         while (current != nullptr) {
+            std::cout << current->data << " ";
+            current = current->prev;
+    }
+    std::cout << std::endl;
+    }
     // Wyœwietla zawartoœæ listy.
     void display() {
         Node* current = head;
@@ -101,22 +110,75 @@ public:
         }
         std::cout << std::endl;
     }
+    //Usuwanie elementu z konca listy
+    void removeFromEnd() {
+    if (isEmpty()) {
+        std::cout << "Lista jest pusta" << std::endl;
+        return;
+    }
+    Node* temp = tail;
+    if (head == tail) {
+        head = tail = nullptr;
+    }
+    else {
+        tail = tail->prev;
+        tail->next = nullptr;
+    }
+    delete temp;
+}
+    //usuniecie z podanego indeksu
+    void removeAt(int index) {
+    if (index < 0) {
+        std::cout << "Nieprawidlowy index" << std::endl;
+        return;
+    }
+    if (index == 0) {
+        removeFromFront();
+    }
+    else if (index >= size() - 1) {
+        removeFromEnd();
+    }
+    else {
+        Node* current = head;
+        for (int i = 0; i < index; i++) {
+            current = current->next;
+        }
+        current->prev->next = current->next;
+        current->next->prev = current->prev;
+        delete current;
+    }
+}
 };
 int main() {
     DoublyLinkedList myList;
 
     std::cout << "Pusta lista : ";
     myList.display();
+    
     myList.addToFront(1);
     myList.addToFront(2);
     myList.addToEnd(3);
     std::cout << "Lista po dodaniu elementow : ";
     myList.display();
+    
     myList.insertAt(1, 4);
     std::cout << "Lista po dodaniu na index 1: ";
     myList.display();
+
+    std::cout << "Lista w odwrotnej kolejności: ";
+    myList.displayReverse();
+    
     myList.removeFromFront();
     std::cout << "Lista po usunieciu z przodu: ";
     myList.display();
+
+    myList.removeFromEnd();
+    std::cout << "Lista po usunieciu z tylu: ";
+    myList.display();
+    
+    myList.removeAt(1);
+    std::cout << "Lista po usunięciu na index 1: ";
+    myList.display();
+    
     return 0;
 }
