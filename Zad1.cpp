@@ -1,4 +1,5 @@
 //to będzie commit do cofnięcia
+//to będzie commit do cofnięcia2
 #include <iostream>
 class Node {
 public:
