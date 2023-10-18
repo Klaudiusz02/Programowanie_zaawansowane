@@ -1,4 +1,4 @@
-//commit do usunięcia
+//to będzie commit do cofnięcia
 #include <iostream>
 class Node {
 public:
