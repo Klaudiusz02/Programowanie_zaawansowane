@@ -1,3 +1,4 @@
+//commit do usunięcia
 #include <iostream>
 class Node {
 public:
